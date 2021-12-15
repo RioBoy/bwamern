@@ -7,6 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+@import 'colorVariables';
 @import 'functions';
 @import 'variables';
 @import 'mixins';
@@ -199,4 +200,10 @@ section {
       }
     }
   }
+}
+
+.testimonial-hero,
+.testimonial-hero img {
+  width: 365px;
+  height: 500px;
 }
