@@ -37,7 +37,7 @@ export default function Testimoni({ data }) {
               {data.content}
             </h5>
             <span className="text-gray-500">
-              {data.familyName}, {data.familyOccupation}
+              {data.familyName}, {data.familyOcupation}
             </span>
 
             <div>

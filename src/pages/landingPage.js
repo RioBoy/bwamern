@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-labels */
-/* eslint-disable no-labels */
-/* eslint-disable no-unused-expressions */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -31,8 +28,6 @@ class LandingPage extends Component {
 
   render() {
     const { page } = this.props;
-
-    console.log(page);
 
     if (!page.hasOwnProperty('landingPage')) return null;
 
