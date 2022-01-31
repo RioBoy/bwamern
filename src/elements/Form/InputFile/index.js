@@ -1,9 +1,12 @@
-import React, { useRef } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useRef, useState } from 'react';
 import propTypes from 'prop-types';
 
 import './index.scss';
 
 export default function File(props) {
+  const [Filename, setFilename] = useState('');
+
   const {
     value,
     placeholder,
@@ -16,6 +19,16 @@ export default function File(props) {
   } = props;
 
   const refInputFile = useRef(null);
+
+  const onChange = (event) => {
+    setFilename(event.target.value);
+    props.onChange({
+      target: {
+        name: event.target.name,
+        value: event.target.files,
+      },
+    });
+  };
 
   return (
     <div className={['input-text mb-3', outerClassName].join(' ')}>
@@ -31,12 +44,12 @@ export default function File(props) {
           name={name}
           className="d-none"
           type="file"
-          value={value}
-          onChange={props.onChange}
+          value={Filename}
+          onChange={onChange}
         />
         <input
           onClick={() => refInputFile.current.click()}
-          defaultValue={value}
+          defaultValue={Filename}
           placeholder={placeholder}
           className={['form-control', inputClassName].join(' ')}
         />
