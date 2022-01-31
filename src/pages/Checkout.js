@@ -15,8 +15,6 @@ import BookingInformation from 'parts/Checkout/BookingInformation';
 import Payment from 'parts/Checkout/Payment';
 import Completed from 'parts/Checkout/Completed';
 
-import ItemDetails from 'json/itemDetails.json';
-
 import { submitBooking } from 'store/actions/checkout';
 
 class Checkout extends Component {
@@ -166,10 +164,10 @@ class Checkout extends Component {
                     )}
                   <Button
                     className="btn btn-inline-flex"
-                    type="link"
+                    type="button"
                     isBlock
                     isLight
-                    href={`/properties/${ItemDetails._id}`}
+                    onClick={() => this.props.history.goBack()}
                   >
                     Cancel
                   </Button>
